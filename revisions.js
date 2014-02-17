@@ -791,7 +791,8 @@ module.exports = ext.register("ext/revisions/revisions", {
      * saved in the collab session.
      **/
     isMaster: function(fullPath) {
-        return this.getConcorde().isMaster(fullPath);
+		var concorde = this.getConcorde();
+        return concorde && concorde.isMaster(fullPath);
     },
 
     getRevision: function(id, content) {
